@@ -1,0 +1,60 @@
+/* animations.css: splash screen, hero dot grid, entrance and scroll reveals, reduced motion
+   Owner: Poorna */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Splash screen ---------- */
+/* Matches the Framer preloader: cream screen, petal logo rises in over 2.1s,
+   then the cream panel wipes up and the logo flies off the top (0.9s). */
+.splash { display: none; }
+.has-splash .splash { display: block; position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
+.has-splash { overflow: hidden; }
+.splash-bg {
+  position: absolute; left: 0; right: 0; top: 0; height: 100%;
+  background: var(--splash);
+  transition: height .9s cubic-bezier(.96, -.02, .38, 1.01);
+}
+.splash-logo {
+  position: absolute; left: 50%; top: 50%;
+  margin: -48px 0 0 -48px;
+  opacity: 0; transform: translateY(560px);
+  animation: splash-in 2.1s cubic-bezier(.56, .22, .05, .99) forwards;
+  transition: transform .9s cubic-bezier(.96, -.02, .38, 1.01);
+}
+@keyframes splash-in {
+  from { opacity: 0; transform: translateY(560px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.splash.leaving .splash-bg { height: 2px; }
+.splash.leaving .splash-logo { animation: none; opacity: 1; transform: translateY(-120vh); }
+
+/* ---------- Hero dot grid ---------- */
+#dotGrid { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease; }
+#dotGrid.on { opacity: 1; }
+
+/* ---------- Entrance + scroll animations (only when JS is running) ---------- */
+.hero-banner div::after {
+  content: ""; position: absolute; inset: -20%; pointer-events: none;
+  background: radial-gradient(40% 50% at 30% 40%, rgba(144,200,224,.45), transparent 70%),
+              radial-gradient(35% 45% at 75% 60%, rgba(192,223,237,.4), transparent 70%);
+  animation: drift 12s ease-in-out infinite alternate; mix-blend-mode: soft-light;
+}
+.js .hw { display: inline-block; opacity: 0; filter: blur(10px); transform: translateY(10px);
+  transition: opacity .8s ease, filter .8s ease, transform .8s ease; }
+.js.hero-go .hw { opacity: 1; filter: none; transform: none; }
+.js .hero-rise { opacity: 0; transform: translateY(80px);
+  transition: opacity 1s cubic-bezier(.2,.7,.2,1) .5s, transform 1s cubic-bezier(.2,.7,.2,1) .5s; }
+.js.hero-go .hero-rise { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(60px);
+  transition: opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1); }
+.js .reveal.from-left { transform: translateX(-30px); }
+.js .reveal.from-right { transform: translateX(30px); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .hw, .js .hero-rise, .js .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
+
+/* Splash: paint the whole page the splash colour while it runs, so there is no white flash */
+.has-splash, .has-splash body { background: var(--splash); }
