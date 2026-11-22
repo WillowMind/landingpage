@@ -1,0 +1,73 @@
+/* forms.css: FAQ accordion and waitlist form
+   Owner: Sadeesha */
+
+/* faq */
+.faq { display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: var(--cream); border-radius: 16px; border: 1px solid var(--line); }
+.faq-item h3 { font-size: 17px; }
+.faq-item button {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font: inherit; font-weight: 500; text-align: left;
+  background: none; border: 0; padding: 20px 24px; cursor: pointer; color: inherit;
+}
+.plus { position: relative; width: 16px; height: 16px; flex: none; }
+.plus::before, .plus::after { content: ""; position: absolute; background: var(--ink); left: 0; right: 0; top: 7px; height: 2px; transition: transform .25s ease; }
+.plus::after { transform: rotate(90deg); }
+button[aria-expanded="true"] .plus::after { transform: rotate(0); }
+.answer { padding: 0 24px 22px; color: var(--muted); font-size: 16px; max-width: 64ch; text-wrap: pretty; }
+.answer[hidden] { display: none; }
+
+/* form */
+.cta { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+.cta-art {
+  border-radius: 28px; padding: 40px; display: flex; align-items: flex-end; min-height: 420px;
+  background:
+    linear-gradient(to top, rgba(10,40,90,.55), rgba(10,40,90,0) 55%),
+    url("images/hero-flower.png") 60% 40% / cover no-repeat,
+    radial-gradient(circle at 70% 25%, rgba(255,255,255,.75) 0, rgba(255,255,255,0) 30%),
+    linear-gradient(160deg, #6fb0cc, var(--blue) 55%, var(--sky));
+}
+.cta-art h2 { color: #fff; max-width: 10ch; }
+.form { background: var(--sky); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 22px; position: relative; }
+.field { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.field label, .field legend { font-size: 15px; font-weight: 500; color: #4a4742; padding: 0; }
+input[type="text"], textarea {
+  font: inherit; font-size: 16px; color: var(--ink);
+  background: var(--cream); border: 2px solid transparent; border-radius: 14px;
+  padding: 16px 18px; width: 100%;
+}
+textarea { resize: vertical; min-height: 120px; }
+input::placeholder, textarea::placeholder { color: #8d8a84; }
+input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--ink); }
+input[aria-invalid="true"] { border-color: var(--clay); }
+.error { color: var(--clay); font-size: 14px; font-weight: 500; }
+.error[hidden] { display: none; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { cursor: pointer; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip span {
+  display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink);
+  background: var(--cream); border-radius: 12px; padding: 10px 16px 10px 14px; border: 2px solid transparent;
+  transition: border-color .2s ease;
+}
+.chip span::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: #c7c3bb; transition: background .2s ease; }
+.chip input:checked + span::before { background: var(--ink); }
+.chip input:checked + span { border-color: var(--ink); }
+.chip input:focus-visible + span { outline: 3px solid var(--clay); outline-offset: 2px; }
+.small { font-size: 13px; text-align: center; color: #4a4742; }
+.small a { color: var(--clay); font-weight: 600; }
+
+.success { position: absolute; inset: 0; background: var(--sky); border-radius: 28px; padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 12px; text-align: center; }
+.success[hidden] { display: none; }
+.success h3 { font-family: var(--serif); font-weight: 400; font-size: 40px; }
+.success a { color: var(--clay); font-weight: 600; }
+
+
+@media (max-width: 900px) {
+  .cta { grid-template-columns: 1fr; }
+  .cta-art { min-height: 260px; }
+}
+@media (max-width: 760px) {
+  .form { padding: 24px 20px; }
+}
