@@ -1,4 +1,3 @@
-// Owner: Shevin
 // Mobile menu
 (function () {
   const menuBtn = document.getElementById("menuBtn");

@@ -1,5 +1,3 @@
-// Owner: Poorna
-// 5. Animations (hero entrance, dot grid, scroll reveals, smooth scroll)
 (function () {
   const root = document.documentElement;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

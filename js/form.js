@@ -1,8 +1,5 @@
-// Owner: Sadeesha
 // Waitlist form (prototype, nothing is sent)
 (function () {
-  // This is a prototype, so nothing is sent anywhere. To collect real
-  // sign-ups later, send `data` to your backend inside the submit handler.
   const form = document.getElementById("waitlistForm");
   const contact = document.getElementById("contact");
   const contactError = document.getElementById("contactError");

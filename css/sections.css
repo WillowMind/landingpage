@@ -1,6 +1,3 @@
-/* sections.css: hero, about stats, services tabs, process, why choose us, team cards
-   Owner: Quinn */
-
 /* ---------- Hero ---------- */
 .hero { position: relative; overflow: hidden; padding: 110px 0 0; text-align: center; }
 .hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
@@ -20,7 +17,6 @@
 .hero-banner div {
   position: relative; overflow: hidden;
   aspect-ratio: 16 / 8; border-radius: 28px;
-  background: url("images/hero-flower.png") center 40% / cover no-repeat, var(--sky);
 }
 .hero-glow {
   position: absolute; inset: auto -10% 0 -10%; height: 40%;
@@ -75,8 +71,8 @@ h3 { font-size: 20px; font-weight: 500; line-height: 1.3; }
 .panel { animation: fade .35s ease; }
 .panel[hidden] { display: none; }
 @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-.panel-art { aspect-ratio: 16 / 10; background-size: cover; background-position: center; border-radius: var(--radius); margin-bottom: 22px; }
-.art-1 { background: url("images/tab-explore.png") center / cover no-repeat, radial-gradient(circle at 30% 30%, #fff 0, rgba(255,255,255,0) 35%), linear-gradient(135deg, #90C8E0, #C0DFED); }
+.panel-art { overflow: hidden; aspect-ratio: 16 / 10; background-size: cover; background-position: center; border-radius: var(--radius); margin-bottom: 22px; }
+.art-1 { background: url("../images/tab-explore.png") center / cover no-repeat, radial-gradient(circle at 30% 30%, #fff 0, rgba(255,255,255,0) 35%), linear-gradient(135deg, #90C8E0, #C0DFED); }
 .art-2 { background: radial-gradient(circle at 70% 40%, #F1E6D0 0, rgba(241,230,208,0) 45%), linear-gradient(135deg, #C0DFED, #90C8E0); }
 .art-3 { background: radial-gradient(circle at 25% 65%, #FAF6EE 0, rgba(250,246,238,0) 40%), linear-gradient(160deg, #90C8E0, #6fb0cc); }
 .art-4 { background: radial-gradient(circle at 60% 30%, #FAF6EE 0, rgba(250,246,238,0) 40%), linear-gradient(120deg, #C0DFED, #F1E6D0); }
@@ -136,3 +132,5 @@ h3 { font-size: 20px; font-weight: 500; line-height: 1.3; }
   .hero { padding: 72px 0 0; }
   .stats { grid-template-columns: 1fr; }
 }
+
+.hero-banner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }

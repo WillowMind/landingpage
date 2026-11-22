@@ -1,5 +1,3 @@
-// Owner: Sadeesha
-// FAQ accordion (one open at a time)
 (function () {
   const faqButtons = Array.from(document.querySelectorAll("#faqList button"));
   faqButtons.forEach((btn) => {

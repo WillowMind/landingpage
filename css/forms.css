@@ -1,6 +1,3 @@
-/* forms.css: FAQ accordion and waitlist form
-   Owner: Sadeesha */
-
 /* faq */
 .faq { display: flex; flex-direction: column; gap: 10px; }
 .faq-item { background: var(--cream); border-radius: 16px; border: 1px solid var(--line); }
@@ -23,7 +20,7 @@ button[aria-expanded="true"] .plus::after { transform: rotate(0); }
   border-radius: 28px; padding: 40px; display: flex; align-items: flex-end; min-height: 420px;
   background:
     linear-gradient(to top, rgba(10,40,90,.55), rgba(10,40,90,0) 55%),
-    url("images/hero-flower.png") 60% 40% / cover no-repeat,
+    url("../images/hero-flower.png") 60% 40% / cover no-repeat,
     radial-gradient(circle at 70% 25%, rgba(255,255,255,.75) 0, rgba(255,255,255,0) 30%),
     linear-gradient(160deg, #6fb0cc, var(--blue) 55%, var(--sky));
 }

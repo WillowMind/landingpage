@@ -1,5 +1,3 @@
-// Owner: Quinn
-// Services tabs (Explore / Understand / Connect / Thrive)
 (function () {
   const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
   const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
@@ -29,4 +27,11 @@
       }
     });
   });
+
+  // Respect reduced motion: show the still poster instead of playing the video
+  const vid = document.getElementById("exploreVideo");
+  if (vid && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+  }
 })();

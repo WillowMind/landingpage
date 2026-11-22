@@ -1,6 +1,3 @@
-/* animations.css: splash screen, hero dot grid, entrance and scroll reveals, reduced motion
-   Owner: Poorna */
-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

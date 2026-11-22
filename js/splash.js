@@ -1,6 +1,3 @@
-// Owner: Poorna
-// 0. Splash screen
-// Logo rises in, then after 1.5s the cream panel wipes up (0.9s) and we remove it.
 (function () {
   const splash = document.getElementById("splash");
   const root = document.documentElement;

@@ -1,398 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Willow | Therapy, at your own pace</title>
-
-  <meta name="description" content="Private counselling and self-care for people in Sri Lanka. Sinhala, Tamil and English. Start quietly and choose how much you share.">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Halant:wght@400;500&display=swap" rel="stylesheet">
-  <script>
-    // Show the splash screen only when motion allowed and js is running
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      document.documentElement.classList.add("has-splash");
-    }
-  </script>
-
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/sections.css">
-  <link rel="stylesheet" href="css/forms.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Willow | Private counselling and self-care for Sri Lanka</title>
+  <meta name="description" content="Find a counsellor who fits you, or start with free self-care tools. Anonymous if you want, in Sinhala, Tamil or English." />
+  <link rel="preload" href="assets/fonts/halant-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/figtree-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-  <!-- Splash screen -->
-  <div class="splash" id="splash" aria-hidden="true">
-    <div class="splash-bg"></div>
-    <svg class="splash-logo" viewBox="0 0 1425.09 1424.173" width="96" height="96" fill="none">
-      <defs>
-
-        <linearGradient id="splashGrad" x1="0.4348" x2="0.5602" y1="0.038" y2="0.9266">
-          <stop offset="0" stop-color="rgb(194,237,255)"/>
-          <stop offset="0.43" stop-color="rgb(161,227,255)"/>
-          <stop offset="1" stop-color="rgb(128,217,255)"/>
-        </linearGradient>
-
-      </defs>
-      <path fill="url(#splashGrad)" d="M 607.265 0.614 C 617.826 -1.185 676.137 1.285 685.495 3.923 C 724.099 14.854 737.481 41.383 728.047 88.463 C 722.331 116.989 704.332 187.366 698.906 202.429 C 689.351 228.942 677.295 242.328 658.702 247.009 C 639.224 251.918 620.981 245.073 586.019 219.734 C 573.796 210.875 545.113 190.232 522.267 173.858 C 499.437 157.483 475.357 138.791 468.758 132.327 C 431.586 95.858 435.853 56.538 479.456 33.623 C 504.634 20.389 548.039 8.024 585.059 3.526 C 594.63 2.383 604.628 1.057 607.28 0.599 Z M 809.112 19.367 C 834.335 14.778 878.975 26.579 931.204 51.674 C 983.312 76.708 1022.694 105.692 1033.957 127.311 C 1040.845 140.514 1039.748 157.605 1031.122 171.525 C 1016.72 194.76 969.032 225.085 905.387 251.491 C 812.388 290.08 751.014 293.708 726.629 262.088 C 714.97 246.948 713.065 225.542 720.594 194.349 C 726.05 171.754 749.124 92.382 754.718 76.968 C 760.692 60.471 772.229 40.88 780.398 33.318 C 787.729 26.533 798.534 21.288 809.127 19.367 Z M 321.03 133.928 C 326.349 132.86 344.165 132.312 360.625 132.693 C 392.387 133.455 407.856 136.504 438.855 148.168 C 506.219 173.507 584.205 241.017 624.532 308.848 C 660.957 370.138 674.171 433.029 669.355 522.143 C 667.084 564.162 668.364 666.662 671.55 697.993 C 672.677 709.153 676.64 743.061 680.313 773.355 C 704.454 971.846 704.119 1042.985 678.804 1090.843 C 658.534 1129.203 618.786 1139.327 575 1117.296 C 552.2 1105.83 536.624 1093.115 454.279 1018.729 C 416.665 984.745 377.817 950.639 290.091 874.56 C 187.537 785.613 160.165 759.298 130.141 720.741 C 89.723 668.827 61.558 608.361 49.289 547.177 C 45.555 528.592 44.839 518.896 44.809 486.406 C 44.748 436.657 49.64 409.717 66.313 367.775 C 87.787 313.818 122.368 263.002 165.819 221.563 C 214.711 174.94 268.816 144.387 320.984 133.943 Z M 1095.544 195.827 C 1116.165 191.726 1154.343 192.153 1172.052 196.681 C 1213.888 207.384 1250.465 239.538 1269.76 282.548 C 1276.679 297.916 1283.705 320.831 1288.521 343.594 C 1293.794 368.598 1293.307 426.518 1287.576 453.138 C 1279.285 491.696 1263.969 526.763 1238.867 564.771 C 1189.701 639.188 1121.118 708.117 972.354 832.633 C 875.606 913.606 855.047 928.044 824.901 936.063 C 797.757 943.29 770.934 933.548 753.712 910.236 C 728.885 876.634 709.941 801.027 700.812 699.152 C 695.066 634.95 698.769 519.688 708.706 453.733 C 717.18 397.413 735.438 362.225 768.267 338.944 C 784.056 327.738 793.536 323.149 833.908 307.049 C 874.814 290.751 901.165 278.691 959.14 249.692 C 1024.69 216.913 1060.415 202.81 1095.559 195.812 Z M 1341.498 612.294 C 1377.237 608.864 1405.188 629.904 1415.628 668.095 C 1443.351 769.529 1408.739 933.502 1330.372 1072.091 C 1248.164 1217.479 1107.737 1337.65 956.702 1391.881 C 854.193 1428.685 778.859 1424.188 738.395 1378.815 C 711.495 1348.642 699.592 1301.242 702.656 1236.338 C 704.911 1188.633 712.714 1151.569 729.205 1110.496 C 740.224 1083.022 749.414 1066.8 767.535 1042.787 C 798.535 1001.714 838.191 967.288 946.003 887.855 C 1021.002 832.602 1100.345 772.258 1152.849 730.559 C 1219.618 677.518 1244.902 658.018 1263.13 645.516 C 1290.594 626.671 1319.414 614.474 1341.498 612.34 Z M 36.502 764.055 C 53.907 759.451 79.329 764.162 101.595 776.1 C 171.275 813.499 348.067 949.694 475.311 1064.01 C 603.744 1179.424 675.969 1273.981 690.189 1345.38 C 699.562 1392.445 671.809 1419.156 608.971 1423.501 C 498.462 1431.14 359.238 1373.204 239.355 1269.697 C 125.691 1171.557 39.779 1033.106 9.359 898.939 C -1.98 848.962 -2.971 815.893 6.143 793.099 C 10.974 781.024 25.727 766.922 36.502 764.071 Z"/>
-    </svg>
+  <!-- ============ PRELOADER (desktop only, 3s) ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__bg"></div>
+    <div class="preloader__logo">
+      <svg viewBox="0 0 1425.09 1424.173" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="willowLogoGrad" x1="0.4347779700078431" x2="0.5602263024843007" y1="0.037993587715038024" y2="0.9266187044363172">
+            <stop offset="0" stop-color="rgb(194,237,255)" />
+            <stop offset="0.43" stop-color="rgb(161,227,255)" />
+            <stop offset="1" stop-color="rgb(128,217,255)" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#willowLogoGrad)" d="M 607.265 0.614 C 617.826 -1.185 676.137 1.285 685.495 3.923 C 724.099 14.854 737.481 41.383 728.047 88.463 C 722.331 116.989 704.332 187.366 698.906 202.429 C 689.351 228.942 677.295 242.328 658.702 247.009 C 639.224 251.918 620.981 245.073 586.019 219.734 C 573.796 210.875 545.113 190.232 522.267 173.858 C 499.437 157.483 475.357 138.791 468.758 132.327 C 431.586 95.858 435.853 56.538 479.456 33.623 C 504.634 20.389 548.039 8.024 585.059 3.526 C 594.63 2.383 604.628 1.057 607.28 0.599 Z M 809.112 19.367 C 834.335 14.778 878.975 26.579 931.204 51.674 C 983.312 76.708 1022.694 105.692 1033.957 127.311 C 1040.845 140.514 1039.748 157.605 1031.122 171.525 C 1016.72 194.76 969.032 225.085 905.387 251.491 C 812.388 290.08 751.014 293.708 726.629 262.088 C 714.97 246.948 713.065 225.542 720.594 194.349 C 726.05 171.754 749.124 92.382 754.718 76.968 C 760.692 60.471 772.229 40.88 780.398 33.318 C 787.729 26.533 798.534 21.288 809.127 19.367 Z M 321.03 133.928 C 326.349 132.86 344.165 132.312 360.625 132.693 C 392.387 133.455 407.856 136.504 438.855 148.168 C 506.219 173.507 584.205 241.017 624.532 308.848 C 660.957 370.138 674.171 433.029 669.355 522.143 C 667.084 564.162 668.364 666.662 671.55 697.993 C 672.677 709.153 676.64 743.061 680.313 773.355 C 704.454 971.846 704.119 1042.985 678.804 1090.843 C 658.534 1129.203 618.786 1139.327 575 1117.296 C 552.2 1105.83 536.624 1093.115 454.279 1018.729 C 416.665 984.745 377.817 950.639 290.091 874.56 C 187.537 785.613 160.165 759.298 130.141 720.741 C 89.723 668.827 61.558 608.361 49.289 547.177 C 45.555 528.592 44.839 518.896 44.809 486.406 C 44.748 436.657 49.64 409.717 66.313 367.775 C 87.787 313.818 122.368 263.002 165.819 221.563 C 214.711 174.94 268.816 144.387 320.984 133.943 Z M 1095.544 195.827 C 1116.165 191.726 1154.343 192.153 1172.052 196.681 C 1213.888 207.384 1250.465 239.538 1269.76 282.548 C 1276.679 297.916 1283.705 320.831 1288.521 343.594 C 1293.794 368.598 1293.307 426.518 1287.576 453.138 C 1279.285 491.696 1263.969 526.763 1238.867 564.771 C 1189.701 639.188 1121.118 708.117 972.354 832.633 C 875.606 913.606 855.047 928.044 824.901 936.063 C 797.757 943.29 770.934 933.548 753.712 910.236 C 728.885 876.634 709.941 801.027 700.812 699.152 C 695.066 634.95 698.769 519.688 708.706 453.733 C 717.18 397.413 735.438 362.225 768.267 338.944 C 784.056 327.738 793.536 323.149 833.908 307.049 C 874.814 290.751 901.165 278.691 959.14 249.692 C 1024.69 216.913 1060.415 202.81 1095.559 195.812 Z M 1341.498 612.294 C 1377.237 608.864 1405.188 629.904 1415.628 668.095 C 1443.351 769.529 1408.739 933.502 1330.372 1072.091 C 1248.164 1217.479 1107.737 1337.65 956.702 1391.881 C 854.193 1428.685 778.859 1424.188 738.395 1378.815 C 711.495 1348.642 699.592 1301.242 702.656 1236.338 C 704.911 1188.633 712.714 1151.569 729.205 1110.496 C 740.224 1083.022 749.414 1066.8 767.535 1042.787 C 798.535 1001.714 838.191 967.288 946.003 887.855 C 1021.002 832.602 1100.345 772.258 1152.849 730.559 C 1219.618 677.518 1244.902 658.018 1263.13 645.516 C 1290.594 626.671 1319.414 614.474 1341.498 612.34 Z M 36.502 764.055 C 53.907 759.451 79.329 764.162 101.595 776.1 C 171.275 813.499 348.067 949.694 475.311 1064.01 C 603.744 1179.424 675.969 1273.981 690.189 1345.38 C 699.562 1392.445 671.809 1419.156 608.971 1423.501 C 498.462 1431.14 359.238 1373.204 239.355 1269.697 C 125.691 1171.557 39.779 1033.106 9.359 898.939 C -1.98 848.962 -2.971 815.893 6.143 793.099 C 10.974 781.024 25.727 766.922 36.502 764.071 Z" />
+      </svg>
+    </div>
   </div>
 
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="nav" id="top">
-    
-    <div class="wrap nav-inner">
-      <a class="logo" href="#top">willow</a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
-        <span></span><span></span>
-      </button>
-      <nav class="nav-links" id="navLinks" aria-label="Main">
-        <a href="#about">About</a>
-        <a href="#process">Process</a>
-        <a href="#why">Why Willow</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href="#waitlist">Join waitlist</a>
-      </nav>
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <div class="nav__links" id="navLinks">
+        <a class="nav__link t-14m" href="#who-we-are">About</a>
+        <a class="nav__link t-14m" href="#how-we-work">Process</a>
+        <a class="nav__link t-14m" href="#team">The Team</a>
+        <a class="nav__link t-14m" href="#faq">FAQ</a>
+      </div>
+      <div class="nav__name">
+        <a class="nav__logo t-32r" href="#">willow</a>
+        <button class="nav__menu" id="navMenu" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="nav__bar nav__bar--top"></span>
+          <span class="nav__bar nav__bar--bottom"></span>
+        </button>
+      </div>
+      <a class="btn btn--xs nav__cta" href="#book-a-call">
+        <span class="btn__text btn__text--in t-14m">Join Waitlist</span>
+        <span class="btn__text btn__text--out t-14m">Join Waitlist</span>
+      </a>
     </div>
-  </header>
+  </nav>
 
-  <main id="main">
+  <main class="page">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-inner">
-        <p class="tag">Made for Sri Lanka</p>
-        <h1>Therapy, at your own pace</h1>
-        <p class="lead">Private counselling and self-care for people in Sri Lanka. Start quietly, go at your own pace, and choose how much you share.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#waitlist">Join the waitlist</a>
-          <a class="link-arrow" href="#process">See how it works</a>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__content" id="content">
+        <div class="hero__text">
+          <div class="hero__title-row">
+            <h1 class="hero__title t-80r mount-up" data-delay="2.3" data-split-words>Therapy, at your own pace</h1>
+          </div>
+          <p class="hero__lead t-20m mount-up" data-delay="2.4">Private counselling and self-care for people in Sri Lanka. Start quietly, go at your own pace, and choose how much you share.</p>
+          <div class="hero__buttons mount-up" data-delay="2.5">
+            <a class="btn btn--sm" href="#book-a-call">
+              <span class="btn__text btn__text--in t-16m">Join Waitlist</span>
+              <span class="btn__text btn__text--out t-16m">Join Waitlist</span>
+            </a>
+          </div>
         </div>
-        <p class="crisis">In an emergency, call <a href="tel:1926">1926</a> (NIMH) or <a href="tel:1333">1333</a> (CCC line).</p>
-      </div>
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-banner" aria-hidden="true"><div><canvas id="dotGrid"></canvas></div></div>
-    </section>
 
-    <!-- ABOUT / STATS -->
-    <section class="section" id="about">
-      <div class="wrap">
-        <div class="head-row">
-          <div>
-            <span class="pill">Why Willow</span>
-            <h2>Where starting feels easier</h2>
-          </div>
-          <p class="side-text">Private, gentle support for anyone taking a first step, with you in control of what you share.</p>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <strong>2 Modes</strong>
-            <span>Begin behind an alias or step forward by name</span>
-          </div>
-          <div class="stat">
-            <strong>24/7</strong>
-            <span>Free self-care tools and crisis helplines</span>
-          </div>
-          <div class="stat">
-            <strong>0</strong>
-            <span>Mental health data sold or shared for ads</span>
+        <div class="hero__grid">
+          <div class="magnetic-grid mount-fade" data-delay="4" data-duration="1.5" id="magneticGrid"></div>
+          <div class="unfocused hero__video mount-zoom" data-delay="2.6" style="--pb-angle: 57deg; --pb-max: 64px;">
+            <video class="unfocused__media" autoplay muted loop playsinline preload="auto"
+                   poster="https://framerusercontent.com/images/IaOEDl7GOhtzAHCbXvF0OnLU.jpg"
+                   src="https://framerusercontent.com/assets/1b0GocrXMzTYTh7PHJIGZm3r4.mp4"></video>
+            <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           </div>
         </div>
       </div>
+      <div class="hero__logos mount-up" data-delay="2.7"></div>
     </section>
 
-    <!-- SERVICES TABS -->
-    <section class="section section-tint" id="services">
-      <div class="wrap">
-        <div class="center-head">
-          <h2>A gentle path forward</h2>
-          <p>Four ways in, from free self-care to a licensed counsellor. Move through them in any order, and share only what you want to.</p>
-        </div>
-
-        <div class="tabs">
-          <div class="tablist" role="tablist" aria-label="Ways to use Willow">
-            <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" data-tab="1"><span>Explore</span><i>01</i></button>
-            <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" data-tab="2" tabindex="-1"><span>Understand</span><i>02</i></button>
-            <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" data-tab="3" tabindex="-1"><span>Connect</span><i>03</i></button>
-            <button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" data-tab="4" tabindex="-1"><span>Thrive</span><i>04</i></button>
+    <!-- ============ WHO WE ARE ============ -->
+    <section class="who" id="who-we-are">
+      <div class="container who__container">
+        <div class="who__content">
+          <div class="who__text">
+            <span class="chip t-14m in-view">Why Willow</span>
+            <h2 class="t-56r c-ink500 in-view balance-tp">Where starting feels easier</h2>
           </div>
-
-          <div class="panels">
-            <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
-              <div class="panel-art art-1" aria-hidden="true"></div>
-              <h3>Explore</h3>
-              <p>Take a short check-in and explore music, movies and art that match how you feel. No pressure and you choose how much to share.</p>
+          <p class="who__lead t-body c-ink300 in-view balance-tp" data-delay="0.2">Private, gentle support for anyone taking a first step with you in control of what you share.</p>
+        </div>
+        <div class="who__bottom">
+          <div class="stats">
+            <div class="stats__image" style="background-image:url('https://framerusercontent.com/images/b3eYtJriiulVsUQKpePMOSMa4gI.png')"></div>
+            <div class="stat in-view stat--1" data-delay="0.3">
+              <div class="stat__text"><h3 class="t-70r stat__num">2 Modes</h3></div>
+              <p class="t-16r stat__label">Begin behind an alias or step forward by name</p>
             </div>
-            <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
-              <div class="panel-art art-2" aria-hidden="true"></div>
-              <h3>Understand</h3>
-              <p>See what your answers suggest, learn about what you're experiencing in plain language and find out what kind of support might help.</p>
+            <div class="stat in-view" data-delay="0.4">
+              <div class="stat__text"><h3 class="t-70r stat__num">24/7</h3></div>
+              <p class="t-16r stat__label">Free self care tools and crisis helplines</p>
             </div>
-            <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
-              <div class="panel-art art-3" aria-hidden="true"></div>
-              <h3>Connect</h3>
-              <p>Talk to a trained counsellor when you're ready, and be matched with a licensed therapist if you need more. You decide what gets shared.</p>
-            </div>
-            <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
-              <div class="panel-art art-4" aria-hidden="true"></div>
-              <h3>Thrive</h3>
-              <p>Keep building small habits with coping tools, creative outlets and support that stays with you at your own pace.</p>
+            <div class="stat in-view" data-delay="0.2">
+              <div class="stat__text"><h3 class="t-70r stat__num">0</h3></div>
+              <p class="t-16r stat__label">Mental health data sold or shared for ads                                      </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="section" id="process">
-      <div class="wrap process">
-        <div class="process-intro">
-          <span class="pill">How it works</span>
-          <h2>Get started without the pressure.</h2>
-          <p>Three steps take you from a short questionnaire to your first session. You stay in control at every stage.</p>
-          <a class="btn" href="#waitlist">Join waitlist</a>
+    <!-- ============ SERVICES ============ -->
+    <section class="services" id="services">
+      <div class="container services__container">
+        <div class="section-head">
+          <h2 class="t-56r c-ink500 center in-view balance-tp" style="max-width:943px">A gentle path forward</h2>
+          <p class="t-16r c-cream500 center in-view services__lead" data-delay="0.2">
+            <span class="only-desktop">Four ways in, from free self-care to a licensed counsellor. Move through them in any order, and share only what you want to.</span>
+            <span class="only-tablet-phone">Empowering your mental well-being through accessible support, personalised care, and a healthier approach to everyday life.</span>
+          </p>
         </div>
-        <ol class="steps">
-          <li>
-            <span class="num">01</span>
-            <div>
-              <h3>Answer a few questions</h3>
-              <p>A short questionnaire about what you’re going through. It isn’t a diagnosis. We use it to find the right counsellor for you.</p>
+
+        <div class="svc" id="svc">
+          <div class="svc__list">
+            <button class="svc__item is-active in-view-left" type="button" data-index="0">
+              <span class="svc__row">
+                <span class="svc__title t-56r">Explore</span>
+                <span class="svc__num t-16m">01</span>
+              </span>
+            </button>
+            <button class="svc__item in-view-left" type="button" data-index="1">
+              <span class="svc__row">
+                <span class="svc__title t-56r">Understand</span>
+                <span class="svc__num t-16m">02</span>
+              </span>
+            </button>
+            <button class="svc__item in-view-left" type="button" data-index="2">
+              <span class="svc__row">
+                <span class="svc__title t-56r">Connect</span>
+                <span class="svc__num t-16m">03</span>
+              </span>
+            </button>
+            <button class="svc__item in-view-left" type="button" data-index="3">
+              <span class="svc__row">
+                <span class="svc__title t-56r">Thrive</span>
+                <span class="svc__num t-16m">04</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="svc__descs in-view-right">
+            <div class="svc__desc is-active" data-index="0">
+              <div class="svc__media"><div class="svc__img" style="background-image:url('https://framerusercontent.com/images/05PzcsTktfER9tOpCngR8puojo.png')"></div></div>
+              <div class="svc__text">
+                <p class="t-20m c-bean900">Explore</p>
+                <p class="t-16r c-squirrel400 balance">Take a short check-in and explore music, movies and art that match how you feel. No pressure and you choose how much to share.</p>
+              </div>
             </div>
-            
-          </li>
-          <li>
-            <span class="num">02</span>
-            <div>
-              <h3>Get matched</h3>
-              <p>We match you with a counsellor by language, what you’re dealing with, your budget and the times that suit you. You choose from the suggestions.</p>
+            <div class="svc__desc" data-index="1">
+              <div class="svc__media"><div class="svc__img" style="background-image:url('https://framerusercontent.com/images/05PzcsTktfER9tOpCngR8puojo.png')"></div></div>
+              <div class="svc__text">
+                <p class="t-20m c-bean900">Understand</p>
+                <p class="t-16r c-squirrel400 balance">See what your answers suggest, learn about what you're experiencing in plain language and find out what kind of support might help.</p>
+              </div>
             </div>
-          </li>
-          <li>
-            <span class="num">03</span>
-            <div>
-              <h3>Talk and keep going</h3>
-              <p>Pick video, voice or chat, anonymous or with your name. Check in with your counsellor at your own pace.</p>
+            <div class="svc__desc" data-index="2">
+              <div class="svc__media"><div class="svc__img" style="background-image:url('https://framerusercontent.com/images/05PzcsTktfER9tOpCngR8puojo.png')"></div></div>
+              <div class="svc__text">
+                <p class="t-20m c-bean900">Connect</p>
+                <p class="t-16r c-squirrel400 balance">Talk to a trained counsellor when you're ready, and be matched with a licensed therapist if you need more. You decide what gets shared.</p>
+              </div>
             </div>
-          </li>
-        </ol>
+            <div class="svc__desc" data-index="3">
+              <div class="svc__media"><div class="svc__img" style="background-image:url('https://framerusercontent.com/images/05PzcsTktfER9tOpCngR8puojo.png')"></div></div>
+              <div class="svc__text">
+                <p class="t-20m c-bean900">Thrive</p>
+                <p class="t-16r c-squirrel400 balance">Keep building small habits with coping tools, creative outlets and support that stays with you at your own pace.</p>
+              </div>
+            </div>
+            <a class="svc__book" href="/book-a-call" aria-hidden="true" tabindex="-1"></a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section class="section section-tint" id="why">
-      <div class="wrap">
-        <div class="center-head">
-          <span class="pill">Why choose us</span>
-          <h2>We’re not your <em>typical</em> therapy app.</h2>
-          <p>We skip the high prices, the jargon and the pressure. We’re building support that works for people in Sri Lanka.</p>
+    <!-- ============ HOW WE WORK ============ -->
+    <section class="how" id="how-we-work">
+      <div class="container how__container">
+        <div class="how__content">
+          <div class="how__text">
+            <div class="how__heading">
+              <span class="chip t-14m in-view">How it works</span>
+              <h2 class="t-56r in-view balance-tp"><span class="c-ink500">Get started </span><span class="c-squirrel400">without</span><span class="c-ink500"> the pressure.</span></h2>
+            </div>
+            <p class="t-16r c-squirrel400 in-view balance-tp" data-delay="0.2">Three steps take you from a short questionnaire to your first session. You stay in control at every stage.</p>
+          </div>
+          <div class="how__buttons in-view" data-delay="0.3">
+            <a class="btn btn--sm" href="#book-a-call">
+              <span class="btn__text btn__text--in t-16m">Join waitlist</span>
+              <span class="btn__text btn__text--out t-16m">Join waitlist</span>
+            </a>
+          </div>
         </div>
+
+        <div class="process in-view-right">
+          <div class="process__item">
+            <div class="process__num">01</div>
+            <div class="process__text">
+              <div class="process__heading-row">
+                <p class="t-20m c-bean900">
+                  <span class="only-desktop-tablet">Answer a few questions</span><span class="only-phone">Assessment</span>
+                </p>
+              </div>
+              <p class="t-16r c-squirrel400 balance">A short questionnaire about what you’re going through. It isn’t a diagnosis. We use it to find the right counsellor for you.</p>
+            </div>
+          </div>
+          <div class="process__item">
+            <div class="process__num">02</div>
+            <div class="process__text">
+              <div class="process__heading-row"><p class="t-20m c-bean900">Get matched</p></div>
+              <p class="t-16r c-squirrel400 balance">We match you with a counsellor by language, what you’re dealing with, your budget and the times that suit you. You choose from the suggestions.</p>
+            </div>
+          </div>
+          <div class="process__item">
+            <div class="process__num">03</div>
+            <div class="process__text">
+              <div class="process__heading-row"><p class="t-20m c-bean900">Talk and keep going</p></div>
+              <p class="t-16r c-squirrel400 balance">Pick video, voice or chat, anonymous or with your name. Check in with your counsellor at your own pace.</p>
+            </div>
+          </div>
+          <svg class="process__line" width="34.5" height="294.5" viewBox="0 0 34.5 298.5" preserveAspectRatio="none" fill="none" aria-hidden="true">
+            <path d="M 9.5 0 C 9.5 0 33 40.192 33 79.633 C 33 119.074 15.928 157.764 15.928 157.764 C 15.928 157.764 2 192.572 2 227.881 C 2 263.19 20.5 299 20.5 299" stroke-width="3" stroke="rgb(239, 231, 221)" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <section class="why" id="why-choose-us">
+      <div class="container why__container">
+        <div class="section-head">
+          <span class="chip t-14m in-view">Why choose us</span>
+          <div class="section-head__text">
+            <h2 class="t-56r center in-view balance-tp" style="max-width:943px"><span class="c-ink500">We're not your </span><span class="c-blue400">typical</span><span class="c-ink500"> therapy app.</span></h2>
+            <p class="t-16r c-cream500 center in-view why__lead balance-tp" data-delay="0.2">We skip the high prices, the jargon and the pressure. We’re building support that works for people in Sri Lanka.</p>
+          </div>
+        </div>
+
         <div class="compare">
-          <article class="card card-other">
-            <h3>Other options</h3>
-            <p>Many apps charge in dollars and work mainly in English. Helplines are free but don’t offer ongoing sessions. It’s hard to find something in between.</p>
-          </article>
-          <article class="card card-willow">
-            <h3>willow</h3>
-            <p>Pay in rupees, talk without fear, and choose how much you share. Start with free self-care tools, or book a counsellor when you’re ready.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM-->
-    <section class="section" id="team">
-      <div class="wrap">
-
-        <div class="center-head">
-          <span class="pill">Meet the team</span>
-          <h2>The people building Willow</h2>
-          <p>Five students, one project.</p>
-        </div>
-        <div class="team-grid">
-          <article class="member">
-            <span class="avatar" aria-hidden="true">SS</span>
-            <h3>Shevin Sheron</h3>
-            <dl>
-              <div><dt>UoW ID</dt><dd>w2212784</dd></div>
-              <div><dt>IIT ID</dt><dd>20250085</dd></div>
-            </dl>
-          </article>
-
-          <article class="member">
-            <span class="avatar" aria-hidden="true">QV</span>
-            <h3>Quinn Winston Vaithiyanathan</h3>
-            <dl>
-              <div><dt>UoW ID</dt><dd>w2212878</dd></div>
-              <div><dt>IIT ID</dt><dd>20250341</dd></div>
-            </dl>
-          </article>
-          <article class="member">
-            <span class="avatar" aria-hidden="true">SK</span>
-            <h3>Sadeesha Karunarathna</h3>
-            <dl>
-              <div><dt>UoW ID</dt><dd>w2212788</dd></div>
-              <div><dt>IIT ID</dt><dd>20250130</dd></div>
-            </dl>
-          </article>
-          <article class="member">
-            <span class="avatar" aria-hidden="true">PV</span>
-            <h3>Poorna Vaz</h3>
-            <dl>
-              <div><dt>UoW ID</dt><dd>w2182379</dd></div>
-              <div><dt>IIT ID</dt><dd>20250196</dd></div>
-            </dl>
-          </article>
-          <article class="member">
-            <span class="avatar" aria-hidden="true">UA</span>
-            <h3>Umair Ahmed</h3>
-            <dl>
-              <div><dt>UoW ID</dt><dd>w2212792</dd></div>
-              <div><dt>IIT ID</dt><dd>20250150</dd></div>
-            </dl>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section section-tint" id="faq">
-      <div class="wrap narrow">
-        <div class="center-head">
-          <span class="pill">FAQ</span>
-          <h2>Questions people ask.</h2>
-          <p>Everything you need to know before you start. Still have questions? Join the waitlist and we’ll get back to you.</p>
-        </div>
-
-        <div class="faq" id="faqList">
-          <div class="faq-item">
-            <h3><button aria-expanded="false" aria-controls="a1" id="q1">Is this therapy?<span class="plus" aria-hidden="true"></span></button></h3>
-            <div class="answer" id="a1" role="region" aria-labelledby="q1" hidden><p>It’s counselling for everyday difficulties like stress, anxiety, low mood, relationships and grief. It isn’t for emergencies or for anything that needs medication. If your situation needs that kind of care, your counsellor will tell you and help you reach it.</p></div>
-          </div>
-          <div class="faq-item">
-            <h3><button aria-expanded="false" aria-controls="a2" id="q2">Can I really stay anonymous?<span class="plus" aria-hidden="true"></span></button></h3>
-            <div class="answer" id="a2" role="region" aria-labelledby="q2" hidden><p>Yes. You can use a nickname and leave out your name. The one limit is emergencies. We can’t send help to someone we can’t identify, so we show helplines and stay in the chat with you.</p></div>
-          </div>
-          <div class="faq-item">
-            <h3><button aria-expanded="false" aria-controls="a3" id="q3">Which languages can I use?<span class="plus" aria-hidden="true"></span></button></h3>
-            <div class="answer" id="a3" role="region" aria-labelledby="q3" hidden><p>Sinhala, Tamil and English. You pick your language when you’re matched, and we only show counsellors who speak it.</p></div>
-          </div>
-          <div class="faq-item">
-            <h3><button aria-expanded="false" aria-controls="a4" id="q4">What does it cost?<span class="plus" aria-hidden="true"></span></button></h3>
-            <div class="answer" id="a4" role="region" aria-labelledby="q4" hidden><p>You pay per session in rupees, with a local card or payment method. The price depends on the counsellor you choose. Self-care tools are free.</p></div>
-          </div>
-          <div class="faq-item">
-            <h3><button aria-expanded="false" aria-controls="a5" id="q5">Why do you ask questions at the start?<span class="plus" aria-hidden="true"></span></button></h3>
-            <div class="answer" id="a5" role="region" aria-labelledby="q5" hidden><p>The questions help us find a counsellor who suits you and spot anyone who needs more support than we can give. They aren’t a diagnosis. You can skip most of them. The safety questions are always asked, because they let us look after you.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WAITLIST FORM -->
-    <section class="section" id="waitlist">
-      <div class="wrap cta">
-        <div class="cta-art" aria-hidden="true">
-          <h2>Take the first step, quietly</h2>
-        </div>
-
-        <form class="form" id="waitlistForm" novalidate>
-          <div class="field">
-            <label for="name">Name or nickname</label>
-            <input id="name" name="name" type="text" placeholder="Optional" autocomplete="nickname">
-          </div>
-
-          <div class="field">
-            <label for="contact">Email or phone number</label>
-            <input id="contact" name="contact" type="text" placeholder="So we can reach you" autocomplete="email" required aria-describedby="contactError">
-            <p class="error" id="contactError" role="alert" hidden></p>
-          </div>
-
-          <fieldset class="field">
-            <legend>What brings you here?</legend>
-
-            <div class="chips">
-              <label class="chip"><input type="radio" name="reason" value="Stress" checked><span>Stress</span></label>
-              <label class="chip"><input type="radio" name="reason" value="Low mood"><span>Low mood</span></label>
-              <label class="chip"><input type="radio" name="reason" value="Anxiety or worry"><span>Anxiety or worry</span></label>
-              <label class="chip"><input type="radio" name="reason" value="Relationships or family"><span>Relationships or family</span></label>
-              <label class="chip"><input type="radio" name="reason" value="Grief or loss"><span>Grief or loss</span></label>
-              <label class="chip"><input type="radio" name="reason" value="Work or study pressure"><span>Work or study pressure</span></label>
-              <label class="chip"><input type="radio" name="reason" value="Just need to talk"><span>Just need to talk</span></label>
+          <div class="compare__card in-view-left">
+            <div class="compare__image" style="background-image:url('https://framerusercontent.com/images/b3eYtJriiulVsUQKpePMOSMa4gI.png')">
+              <h2 class="compare__title compare__title--willow t-56r c-ink500">willow</h2>
             </div>
-          </fieldset>
-
-          <fieldset class="field">
-            <legend>How would you like to talk?</legend>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="format" value="Video" checked><span>Video</span></label>
-              <label class="chip"><input type="radio" name="format" value="Voice only"><span>Voice only</span></label>
-              <label class="chip"><input type="radio" name="format" value="Chat"><span>Chat</span></label>
-              <label class="chip"><input type="radio" name="format" value="Not sure yet"><span>Not sure yet</span></label>
-            </div>
-          </fieldset>
-
-          <div class="field">
-            <label for="notes">Anything you’d like us to know?</label>
-            <textarea id="notes" name="notes" rows="5" placeholder="You can leave this empty."></textarea>
+            <p class="compare__copy compare__copy--1 t-16m balance-tp">Choose how much you share, start with free self-care tools, and book a counsellor when you're ready. Multilingual support, at your own pace.</p>
           </div>
+          <div class="compare__card in-view-right">
+            <div class="compare__image" style="background-image:url('https://framerusercontent.com/images/b3eYtJriiulVsUQKpePMOSMa4gI.png')">
+              <h2 class="compare__title compare__title--other c-ink500">Other options</h2>
+            </div>
+            <div class="compare__copy compare__copy--2 t-16m balance-tp">
+              <p>Many services expect you to book first, share your details upfront or work in just one language. Helplines are vital in a crisis, but they don't offer ongoing support. It's hard to find something in between.</p>
+              <p><br /></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <button class="btn btn-block" type="submit">Join waitlist</button>
-          <p class="small">Your details stay private. This form isn’t for emergencies. If you need help now, call <a href="tel:1926">1926</a>.</p>
+    <!-- ============ TEAM ============ -->
+    <section class="team" id="team">
+      <div class="container team__container">
+        <div class="team__content">
+          <div class="team__text">
+            <span class="chip chip--bean t-14m in-view">Meet the team</span>
+            <h2 class="t-56r in-view balance-phone"><span class="c-ink400">You're in </span><span class="c-blue400">experienced</span><span class="c-ink400"> hands.</span></h2>
+          </div>
+          <p class="team__lead t-16r c-squirrel400 in-view balance-tp" data-delay="0.2">No layers of management. You work directly with the specialists who understand your business and build your automation from start to finish.</p>
+        </div>
 
-          <div class="success" id="formSuccess" role="status" hidden>
-            <h3>Thank you.</h3>
-            <p>You’re on the list. We’ll get in touch when Willow opens. If things feel hard right now, you can call <a href="tel:1926">1926</a> or <a href="tel:1333">1333</a> at any time.</p>
+        <div class="team__wrap">
+          <div class="team__grid">
+            <div class="tcard in-view" data-delay="0.1">
+              <div class="tcard__image">
+                <div class="unfocused tcard__media" style="--pb-angle: 180deg; --pb-max: 24px;">
+                  <img class="unfocused__media" src="https://framerusercontent.com/images/pT0JmsN2TRfIHy3pQc3lhNMabs0.png" alt="Marcus Chen" loading="lazy" />
+                  <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="tcard__text">
+                  <p class="t-20m tcard__name">Marcus Chen</p>
+                  <p class="t-16r tcard__role balance">Lead AI Consultant</p>
+                </div>
+              </div>
+            </div>
+            <div class="tcard in-view tcard--b" data-delay="0.2">
+              <div class="tcard__image">
+                <div class="unfocused tcard__media" style="--pb-angle: 180deg; --pb-max: 24px;">
+                  <img class="unfocused__media" src="https://framerusercontent.com/images/E4puL2ldoiQmc8Q9Ju4gW6uxg.png" alt="Amira Hassan" loading="lazy" />
+                  <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="tcard__text">
+                  <p class="t-20m tcard__name">Amira Hassan</p>
+                  <p class="t-16r tcard__role balance">Automation Specialist</p>
+                </div>
+              </div>
+            </div>
+            <div class="tcard in-view" data-delay="0.3">
+              <div class="tcard__image">
+                <div class="unfocused tcard__media" style="--pb-angle: 180deg; --pb-max: 24px;">
+                  <img class="unfocused__media" src="https://framerusercontent.com/images/RoOV7tIiyQQk02qpHtIeMdUpMA.png" alt="David Park" loading="lazy" />
+                  <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="tcard__text">
+                  <p class="t-20m tcard__name">David Park</p>
+                  <p class="t-16r tcard__role balance">Implementation Engineer</p>
+                </div>
+              </div>
+            </div>
+            <!-- Elena (tablet only) -->
+            <div class="tcard in-view tcard--tablet-only" data-delay="0.4">
+              <div class="tcard__image">
+                <div class="unfocused tcard__media" style="--pb-angle: 180deg; --pb-max: 24px;">
+                  <img class="unfocused__media" src="https://framerusercontent.com/images/Nj8ejHUjmUrxbMwRLUCsHAtarxA.png" alt="Elena Martinez" loading="lazy" />
+                  <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="tcard__text">
+                  <p class="t-20m tcard__name">Elena Martinez</p>
+                  <p class="t-16r tcard__role balance">Client Success Manager</p>
+                </div>
+              </div>
+            </div>
+            <!-- Elena (desktop only, fixed 219px) -->
+            <div class="tcard in-view tcard--desktop-only tcard--fixed" data-delay="0.4">
+              <div class="tcard__image">
+                <div class="unfocused tcard__media" style="--pb-angle: 180deg; --pb-max: 24px;">
+                  <img class="unfocused__media" src="https://framerusercontent.com/images/Nj8ejHUjmUrxbMwRLUCsHAtarxA.png" alt="Elena Martinez" loading="lazy" />
+                  <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="tcard__text">
+                  <p class="t-20m tcard__name">Elena Martinez</p>
+                  <p class="t-16r tcard__role balance">Client Success Manager</p>
+                </div>
+              </div>
+            </div>
+            <div class="tcard in-view" data-delay="0.4">
+              <div class="tcard__image">
+                <div class="unfocused tcard__media" style="--pb-angle: 180deg; --pb-max: 24px;">
+                  <img class="unfocused__media" src="https://framerusercontent.com/images/Nj8ejHUjmUrxbMwRLUCsHAtarxA.png" alt="Elena Martinez" loading="lazy" />
+                  <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="tcard__text">
+                  <p class="t-20m tcard__name">Elena Martinez</p>
+                  <p class="t-16r tcard__role balance">Client Success Manager</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Elena (phone only, 342 × 650) -->
+        <div class="tcard in-view tcard--phone-only tcard--phone-extra" data-delay="0.4">
+          <div class="tcard__image">
+            <div class="unfocused tcard__media" style="--pb-angle: 180deg; --pb-max: 24px;">
+              <img class="unfocused__media" src="https://framerusercontent.com/images/Nj8ejHUjmUrxbMwRLUCsHAtarxA.png" alt="Elena Martinez" loading="lazy" />
+              <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="tcard__text">
+              <p class="t-20m tcard__name">Elena Martinez</p>
+              <p class="t-16r tcard__role balance">Client Success Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq" id="faq">
+      <div class="container faq__container">
+        <div class="section-head">
+          <span class="chip chip--bean t-14m in-view">FAQ</span>
+          <div class="section-head__text">
+            <h2 class="t-56r center in-view faq__title">
+              <span class="only-desktop">Questions people ask.</span>
+              <span class="only-tablet-phone"><span class="c-bean900">Your questions </span><span class="c-squirrel400">answered.</span></span>
+            </h2>
+            <p class="t-16r c-squirrel400 center in-view faq__lead balance-tp" data-delay="0.2">Everything you need to know before you start. Still have questions? Join the waitlist and we’ll get back to you.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="acc in-view">
+            <button class="acc__head" type="button" aria-expanded="false">
+              <span class="acc__q t-18m c-bean900">Is this therapy?</span>
+              <span class="acc__icon" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span>
+            </button>
+            <div class="acc__answer"><div class="acc__inner"><p class="t-14r c-squirrel400">It’s counselling for everyday difficulties like stress, anxiety, low mood, relationships and grief. It isn’t for emergencies or for anything that needs medication. If your situation needs that kind of care, your counsellor will tell you and help you reach it.</p></div></div>
+          </div>
+          <div class="acc in-view">
+            <button class="acc__head" type="button" aria-expanded="false">
+              <span class="acc__q t-18m c-bean900">Can I really stay anonymous?</span>
+              <span class="acc__icon" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span>
+            </button>
+            <div class="acc__answer"><div class="acc__inner"><p class="t-14r c-squirrel400">Yes. You can use a nickname and leave out your name. The one limit is emergencies. We can’t send help to someone we can’t identify, so we show helplines and stay in the chat with you.</p></div></div>
+          </div>
+          <div class="acc in-view">
+            <button class="acc__head" type="button" aria-expanded="false">
+              <span class="acc__q t-18m c-bean900">Which languages can I use?</span>
+              <span class="acc__icon" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span>
+            </button>
+            <div class="acc__answer"><div class="acc__inner"><p class="t-14r c-squirrel400">Sinhala, Tamil and English. You pick your language when you’re matched, and we only show counsellors who speak it.</p></div></div>
+          </div>
+          <div class="acc in-view">
+            <button class="acc__head" type="button" aria-expanded="false">
+              <span class="acc__q t-18m c-bean900">What does it cost?</span>
+              <span class="acc__icon" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span>
+            </button>
+            <div class="acc__answer"><div class="acc__inner"><p class="t-14r c-squirrel400">You pay per session in rupees, with a local card or payment method. The price depends on the counsellor you choose. Self-care tools are free.</p></div></div>
+          </div>
+          <div class="acc in-view">
+            <button class="acc__head" type="button" aria-expanded="false">
+              <span class="acc__q t-18m c-bean900">Why do you ask questions at the start?</span>
+              <span class="acc__icon" aria-hidden="true"><svg viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></span>
+            </button>
+            <div class="acc__answer"><div class="acc__inner"><p class="t-14r c-squirrel400">The questions help us find a counsellor who suits you and spot anyone who needs more support than we can give. They aren’t a diagnosis. You can skip most of them. The safety questions are always asked, because they let us look after you.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / WAITLIST FORM ============ -->
+    <section class="cta" id="book-a-call">
+      <div class="cta__container">
+        <div class="cta__left in-view-left">
+          <div class="unfocused cta__media" style="--pb-angle: 45deg; --pb-max: 40px;">
+            <img class="unfocused__media" src="https://framerusercontent.com/images/05PzcsTktfER9tOpCngR8puojo.png" alt="" />
+            <div class="pblur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="cta__heading">
+            <h2 class="t-56r-alt c-white center cta__title balance-phone">Take the first step, quietly</h2>
+          </div>
+        </div>
+
+        <form class="cta__form in-view-right" id="waitlistForm" novalidate>
+          <div class="form__body">
+            <div class="form__inputs">
+              <label class="field">
+                <span class="t-16m c-squirrel400">Name or nickname</span>
+                <input class="input" type="text" name="Name" placeholder="Optional" />
+              </label>
+              <label class="field">
+                <span class="t-16m c-squirrel400">Email or phone number</span>
+                <input class="input" type="text" name="Email" placeholder="So we can reach you" required />
+              </label>
+            </div>
+
+            <fieldset class="radios">
+              <legend class="t-16m c-cream500">What brings you here?</legend>
+              <div class="radios__group">
+                <label class="radio"><input type="radio" name="Reason" value="Stress" checked /><span class="t-12m c-ink500">Stress</span></label>
+                <label class="radio"><input type="radio" name="Reason" value="Low mood" /><span class="t-12m c-ink500">Low mood</span></label>
+                <label class="radio"><input type="radio" name="Reason" value="Anxiety or worry" /><span class="t-12m c-ink500">Anxiety or worry</span></label>
+                <label class="radio"><input type="radio" name="Reason" value="Relationships or family" /><span class="t-12m">Relationships or family</span></label>
+                <label class="radio"><input type="radio" name="Reason" value="Grief or loss" /><span class="t-12m c-ink500">Grief or loss</span></label>
+                <label class="radio"><input type="radio" name="Reason" value="Work or study pressure" /><span class="t-12m">Work or study pressure</span></label>
+                <label class="radio"><input type="radio" name="Reason" value="Just need to talk" /><span class="t-12m">Just need to talk</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="radios">
+              <legend class="t-16m c-squirrel400">How would you like to talk?</legend>
+              <div class="radios__group">
+                <label class="radio"><input type="radio" name="Talk format" value="Video" checked /><span class="t-12m c-ink500">Video</span></label>
+                <label class="radio"><input type="radio" name="Talk format" value="Voice only" /><span class="t-12m c-ink500">Voice only</span></label>
+                <label class="radio"><input type="radio" name="Talk format" value="Chat" /><span class="t-12m c-ink500">Chat</span></label>
+                <label class="radio"><input type="radio" name="Talk format" value="Not sure yet" /><span class="t-12m c-ink500">Not sure yet</span></label>
+              </div>
+            </fieldset>
+
+            <label class="field">
+              <span class="t-16m c-squirrel400">Anything you’d like us to know?</span>
+              <textarea class="input input--area" name="Message" placeholder="You can leave this empty."></textarea>
+            </label>
+
+            <div class="form__submit">
+              <button class="form-btn" type="submit" id="formBtn" data-state="idle">
+                <span class="form-btn__text">
+                  <span class="form-btn__t form-btn__t--in t-18m">Join waitlist</span>
+                  <span class="form-btn__t form-btn__t--out t-18m">Join waitlist</span>
+                  <span class="form-btn__t form-btn__t--status t-18m"></span>
+                </span>
+                <span class="form-btn__icon">
+                  <svg class="form-btn__arrow" viewBox="0 0 256 256" width="21" height="21" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"/></svg>
+                  <svg class="form-btn__check" viewBox="0 0 256 256" width="18" height="18" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                  <span class="form-btn__spinner"></span>
+                </span>
+              </button>
+              <p class="t-12m c-cream500 center">Your details stay private. This form isn’t for emergencies. If you need help now, call 1926.</p>
+            </div>
           </div>
         </form>
       </div>
     </section>
+
   </main>
 
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="wrap">
-      <div class="foot-top">
-        <div class="foot-brand">
-          <a class="logo" href="#top">willow</a>
-          <p>Quiet help for loud thoughts.</p>
+    <div class="footer__container">
+      <div class="footer__heading">
+        <div class="footer__text">
+          <h2 class="t-56r c-bean900 center in-view footer__logo">willow</h2>
+          <p class="t-18r c-squirrel400 center in-view footer__tagline" data-delay="0.2">Quiet help for loud thoughts.</p>
         </div>
-        <div class="foot-cols">
-          <div>
-            <h4>Navigate</h4>
-            <a href="#top">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#team">Team</a>
+        <div class="socials in-view" data-delay="0.3">
+          <a class="social" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 10C14.8133 10 13.6533 10.3519 12.6666 11.0112C11.6799 11.6705 10.9108 12.6075 10.4567 13.7039C10.0026 14.8003 9.88378 16.0067 10.1153 17.1705C10.3468 18.3344 10.9182 19.4035 11.7574 20.2426C12.5965 21.0818 13.6656 21.6532 14.8295 21.8847C15.9933 22.1162 17.1997 21.9974 18.2961 21.5433C19.3925 21.0892 20.3295 20.3201 20.9888 19.3334C21.6481 18.3467 22 17.1867 22 16C21.9983 14.4092 21.3657 12.884 20.2408 11.7592C19.116 10.6343 17.5908 10.0017 16 10ZM16 20C15.2089 20 14.4355 19.7654 13.7777 19.3259C13.1199 18.8864 12.6072 18.2616 12.3045 17.5307C12.0017 16.7998 11.9225 15.9956 12.0769 15.2196C12.2312 14.4437 12.6122 13.731 13.1716 13.1716C13.731 12.6122 14.4437 12.2312 15.2196 12.0769C15.9956 11.9225 16.7998 12.0017 17.5307 12.3045C18.2616 12.6072 18.8864 13.1199 19.3259 13.7777C19.7654 14.4355 20 15.2089 20 16C20 17.0609 19.5786 18.0783 18.8284 18.8284C18.0783 19.5786 17.0609 20 16 20ZM22 3H10C8.14409 3.00199 6.36477 3.74012 5.05245 5.05245C3.74012 6.36477 3.00199 8.14409 3 10V22C3.00199 23.8559 3.74012 25.6352 5.05245 26.9476C6.36477 28.2599 8.14409 28.998 10 29H22C23.8559 28.998 25.6352 28.2599 26.9476 26.9476C28.2599 25.6352 28.998 23.8559 29 22V10C28.998 8.14409 28.2599 6.36477 26.9476 5.05245C25.6352 3.74012 23.8559 3.00199 22 3ZM27 22C27 23.3261 26.4732 24.5979 25.5355 25.5355C24.5979 26.4732 23.3261 27 22 27H10C8.67392 27 7.40215 26.4732 6.46447 25.5355C5.52678 24.5979 5 23.3261 5 22V10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5H22C23.3261 5 24.5979 5.52678 25.5355 6.46447C26.4732 7.40215 27 8.67392 27 10V22ZM24 9.5C24 9.79667 23.912 10.0867 23.7472 10.3334C23.5824 10.58 23.3481 10.7723 23.074 10.8858C22.7999 10.9994 22.4983 11.0291 22.2074 10.9712C21.9164 10.9133 21.6491 10.7704 21.4393 10.5607C21.2296 10.3509 21.0867 10.0836 21.0288 9.79264C20.9709 9.50166 21.0007 9.20006 21.1142 8.92597C21.2277 8.65189 21.42 8.41762 21.6666 8.2528C21.9133 8.08797 22.2033 8 22.5 8C22.8978 8 23.2794 8.15804 23.5607 8.43934C23.842 8.72064 24 9.10218 24 9.5Z" fill="currentColor"/></svg>
+          </a>
+          <a class="social" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Meta">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M30 18.6637C30 20.6775 29.6038 22.4 28.8538 23.6437C27.925 25.185 26.4788 26 24.68 26C21.1875 26 18.7075 21.375 16.0825 16.4725C13.955 12.5 11.5438 8 9.25 8C8.0775 8 6.7575 9.25 5.71875 11.3337C4.61382 13.621 4.02696 16.1238 4 18.6637C4 20.3137 4.2975 21.6787 4.86 22.6112C5.4225 23.5437 6.2275 24 7.32 24C9.21 24 11.1763 20.9325 12.8488 17.9312C12.978 17.6992 13.1942 17.528 13.4497 17.4553C13.7053 17.3826 13.9792 17.4145 14.2113 17.5438C14.4433 17.673 14.6145 17.8892 14.6872 18.1447C14.7599 18.4003 14.728 18.6742 14.5988 18.9062C12.6825 22.3387 10.3838 26 7.32 26C5.51875 26 4.07 25.185 3.14625 23.6437C2.39625 22.3937 2 20.6775 2 18.6637C2.02947 15.8149 2.68763 13.0076 3.9275 10.4425C5.3525 7.5775 7.2425 6 9.25 6C12.7425 6 15.2212 10.625 17.8475 15.5275C19.9737 19.5 22.385 24 24.68 24C25.7725 24 26.5775 23.5462 27.14 22.6112C27.7025 21.6762 28 20.3137 28 18.6637C27.9734 16.1239 27.387 13.6211 26.2825 11.3337C25.25 9.25 23.9238 8 22.75 8C21.705 8 20.54 8.935 19.1863 10.86C19.1118 10.9701 19.0161 11.0642 18.9049 11.1369C18.7936 11.2096 18.669 11.2593 18.5382 11.2833C18.4075 11.3072 18.2733 11.3049 18.1435 11.2764C18.0137 11.2479 17.8909 11.1938 17.7823 11.1173C17.6736 11.0408 17.5813 10.9434 17.5107 10.8308C17.4401 10.7182 17.3927 10.5926 17.3712 10.4615C17.3497 10.3304 17.3545 10.1962 17.3854 10.067C17.4163 9.93775 17.4727 9.81596 17.5513 9.70875C18.6763 8.11625 20.4262 6 22.75 6C24.7562 6 26.6463 7.5775 28.0713 10.4425C29.3115 13.0075 29.9701 15.8148 30 18.6637Z" fill="currentColor"/></svg>
+          </a>
+          <a class="social" href="https://twitter.com" target="_blank" rel="noopener" aria-label="X">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M26.8438 26.4638L19.0187 14.1663L26.74 5.6725C26.9146 5.47566 27.0046 5.21791 26.9905 4.95515C26.9764 4.69239 26.8592 4.44579 26.6645 4.26882C26.4697 4.09185 26.2131 3.99876 25.9502 4.00974C25.6873 4.02073 25.4393 4.1349 25.26 4.3275L17.905 12.4175L12.8437 4.46375C12.7535 4.32169 12.6289 4.20471 12.4814 4.12365C12.3339 4.04258 12.1683 4.00005 12 4H6C5.8207 3.99991 5.64468 4.04803 5.49036 4.13932C5.33604 4.23062 5.20911 4.36172 5.12285 4.5189C5.03659 4.67609 4.99417 4.85357 5.00005 5.03278C5.00593 5.21198 5.05988 5.3863 5.15625 5.5375L12.9812 17.8337L5.26 26.3337C5.16983 26.4306 5.09979 26.5444 5.05392 26.6685C5.00806 26.7927 4.98728 26.9247 4.99281 27.0569C4.99833 27.1891 5.03004 27.3189 5.0861 27.4388C5.14216 27.5586 5.22146 27.6662 5.31939 27.7552C5.41732 27.8442 5.53194 27.9129 5.65661 27.9572C5.78128 28.0016 5.91352 28.0208 6.04566 28.0137C6.1778 28.0066 6.30721 27.9733 6.4264 27.9158C6.54559 27.8583 6.65218 27.7777 6.74 27.6787L14.095 19.5888L19.1562 27.5425C19.2472 27.6834 19.3722 27.7991 19.5196 27.8791C19.6671 27.959 19.8323 28.0006 20 28H26C26.1791 27.9999 26.3549 27.9518 26.509 27.8606C26.6632 27.7693 26.79 27.6384 26.8762 27.4814C26.9624 27.3244 27.0049 27.1472 26.9992 26.9681C26.9935 26.7891 26.9398 26.6149 26.8438 26.4638ZM20.5487 26L7.82125 6H11.4462L24.1787 26H20.5487Z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__image"></div>
+
+      <div class="footer__links">
+        <div class="fcol in-view" data-delay="0.1">
+          <div class="fcol__inner">
+            <p class="t-16m c-bean900">Navigate</p>
+            <a class="flink t-14r" href="/">Home</a>
+            <a class="flink t-14r" href="/about">About</a>
+            <a class="flink t-14r" href="#services">Services</a>
+            <span class="flink t-14r">Team</span>
           </div>
-          <div>
-            <h4>Resources</h4>
-            <a href="#services">Self-care</a>
-            <a href="#process">How it works</a>
-            <a href="#faq">FAQ</a>
-            <span>Helplines: 1926, 1333</span>
+        </div>
+        <div class="fcol in-view" data-delay="0.2">
+          <div class="fcol__inner">
+            <p class="t-16m c-bean900">Resources</p>
+            <a class="flink t-14r only-desktop" href="#services">Self-care</a>
+            <span class="flink t-14r only-tablet-phone">Case Studies</span>
+            <a class="flink t-14r" href="#how-we-work"><span class="only-desktop">How it works</span><span class="only-tablet-phone">How We Work</span></a>
+            <a class="flink t-14r" href="#faq">FAQ</a>
           </div>
-          <div>
-            <h4>Connect</h4>
-            <a href="#waitlist">Join the waitlist</a>
+        </div>
+        <div class="fcol in-view" data-delay="0.3">
+          <div class="fcol__inner">
+            <p class="t-16m c-bean900">Connect</p>
+            <a class="flink t-14r" href="/book-a-call">Join the waitlist</a>
+            <a class="flink t-14r" href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+            <a class="flink t-14r" href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+            <a class="flink t-14r" href="https://facebook.com" target="_blank" rel="noopener">Meta</a>
+          </div>
+        </div>
+        <div class="fcol in-view" data-delay="0.4">
+          <div class="fcol__inner">
+            <p class="t-16m c-bean900">Legal</p>
+            <span class="flink t-14r">Privacy Policy</span>
+            <span class="flink t-14r">Terms of Service</span>
+            <span class="flink t-14r">Cookie Policy</span>
+            <span class="flink t-14r">Accessibility</span>
           </div>
         </div>
       </div>
-      <p class="copy">© 2026 Willow. A prototype built for a university project. Not a real counselling service yet.</p>
+
+      <div class="copyright in-view" data-delay="0.1">
+        <div class="copyright__line"></div>
+        <div class="copyright__content">
+          <p class="t-14r c-squirrel400">© 2026 Willow. A prototype built for a university project. Not a real counselling service yet.</p>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="js/splash.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/tabs.js"></script>
-  <script src="js/faq.js"></script>
-  <script src="js/form.js"></script>
-  <script src="js/animations.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
