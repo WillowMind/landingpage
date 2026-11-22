@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Willow | Therapy, at your own pace</title>
+
+  <meta name="description" content="Private counselling and self-care for people in Sri Lanka. Sinhala, Tamil and English. Start quietly and choose how much you share.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Halant:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    // Show the splash screen only when motion allowed and js is running
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("has-splash");
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Splash screen -->
+  <div class="splash" id="splash" aria-hidden="true">
+    <div class="splash-bg"></div>
+    <svg class="splash-logo" viewBox="0 0 1425.09 1424.173" width="96" height="96" fill="none">
+      <defs>
+
+        <linearGradient id="splashGrad" x1="0.4348" x2="0.5602" y1="0.038" y2="0.9266">
+          <stop offset="0" stop-color="rgb(194,237,255)"/>
+          <stop offset="0.43" stop-color="rgb(161,227,255)"/>
+          <stop offset="1" stop-color="rgb(128,217,255)"/>
+        </linearGradient>
+
+      </defs>
+      <path fill="url(#splashGrad)" d="M 607.265 0.614 C 617.826 -1.185 676.137 1.285 685.495 3.923 C 724.099 14.854 737.481 41.383 728.047 88.463 C 722.331 116.989 704.332 187.366 698.906 202.429 C 689.351 228.942 677.295 242.328 658.702 247.009 C 639.224 251.918 620.981 245.073 586.019 219.734 C 573.796 210.875 545.113 190.232 522.267 173.858 C 499.437 157.483 475.357 138.791 468.758 132.327 C 431.586 95.858 435.853 56.538 479.456 33.623 C 504.634 20.389 548.039 8.024 585.059 3.526 C 594.63 2.383 604.628 1.057 607.28 0.599 Z M 809.112 19.367 C 834.335 14.778 878.975 26.579 931.204 51.674 C 983.312 76.708 1022.694 105.692 1033.957 127.311 C 1040.845 140.514 1039.748 157.605 1031.122 171.525 C 1016.72 194.76 969.032 225.085 905.387 251.491 C 812.388 290.08 751.014 293.708 726.629 262.088 C 714.97 246.948 713.065 225.542 720.594 194.349 C 726.05 171.754 749.124 92.382 754.718 76.968 C 760.692 60.471 772.229 40.88 780.398 33.318 C 787.729 26.533 798.534 21.288 809.127 19.367 Z M 321.03 133.928 C 326.349 132.86 344.165 132.312 360.625 132.693 C 392.387 133.455 407.856 136.504 438.855 148.168 C 506.219 173.507 584.205 241.017 624.532 308.848 C 660.957 370.138 674.171 433.029 669.355 522.143 C 667.084 564.162 668.364 666.662 671.55 697.993 C 672.677 709.153 676.64 743.061 680.313 773.355 C 704.454 971.846 704.119 1042.985 678.804 1090.843 C 658.534 1129.203 618.786 1139.327 575 1117.296 C 552.2 1105.83 536.624 1093.115 454.279 1018.729 C 416.665 984.745 377.817 950.639 290.091 874.56 C 187.537 785.613 160.165 759.298 130.141 720.741 C 89.723 668.827 61.558 608.361 49.289 547.177 C 45.555 528.592 44.839 518.896 44.809 486.406 C 44.748 436.657 49.64 409.717 66.313 367.775 C 87.787 313.818 122.368 263.002 165.819 221.563 C 214.711 174.94 268.816 144.387 320.984 133.943 Z M 1095.544 195.827 C 1116.165 191.726 1154.343 192.153 1172.052 196.681 C 1213.888 207.384 1250.465 239.538 1269.76 282.548 C 1276.679 297.916 1283.705 320.831 1288.521 343.594 C 1293.794 368.598 1293.307 426.518 1287.576 453.138 C 1279.285 491.696 1263.969 526.763 1238.867 564.771 C 1189.701 639.188 1121.118 708.117 972.354 832.633 C 875.606 913.606 855.047 928.044 824.901 936.063 C 797.757 943.29 770.934 933.548 753.712 910.236 C 728.885 876.634 709.941 801.027 700.812 699.152 C 695.066 634.95 698.769 519.688 708.706 453.733 C 717.18 397.413 735.438 362.225 768.267 338.944 C 784.056 327.738 793.536 323.149 833.908 307.049 C 874.814 290.751 901.165 278.691 959.14 249.692 C 1024.69 216.913 1060.415 202.81 1095.559 195.812 Z M 1341.498 612.294 C 1377.237 608.864 1405.188 629.904 1415.628 668.095 C 1443.351 769.529 1408.739 933.502 1330.372 1072.091 C 1248.164 1217.479 1107.737 1337.65 956.702 1391.881 C 854.193 1428.685 778.859 1424.188 738.395 1378.815 C 711.495 1348.642 699.592 1301.242 702.656 1236.338 C 704.911 1188.633 712.714 1151.569 729.205 1110.496 C 740.224 1083.022 749.414 1066.8 767.535 1042.787 C 798.535 1001.714 838.191 967.288 946.003 887.855 C 1021.002 832.602 1100.345 772.258 1152.849 730.559 C 1219.618 677.518 1244.902 658.018 1263.13 645.516 C 1290.594 626.671 1319.414 614.474 1341.498 612.34 Z M 36.502 764.055 C 53.907 759.451 79.329 764.162 101.595 776.1 C 171.275 813.499 348.067 949.694 475.311 1064.01 C 603.744 1179.424 675.969 1273.981 690.189 1345.38 C 699.562 1392.445 671.809 1419.156 608.971 1423.501 C 498.462 1431.14 359.238 1373.204 239.355 1269.697 C 125.691 1171.557 39.779 1033.106 9.359 898.939 C -1.98 848.962 -2.971 815.893 6.143 793.099 C 10.974 781.024 25.727 766.922 36.502 764.071 Z"/>
+    </svg>
+  </div>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top">willow</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#why">Why Willow</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-small" href="#waitlist">Join waitlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="tag">Made for Sri Lanka</p>
+        <h1>Therapy, at your own pace</h1>
+        <p class="lead">Private counselling and self-care for people in Sri Lanka. Start quietly, go at your own pace, and choose how much you share.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#waitlist">Join the waitlist</a>
+          <a class="link-arrow" href="#process">See how it works</a>
+        </div>
+        <p class="crisis">In an emergency, call <a href="tel:1926">1926</a> (NIMH) or <a href="tel:1333">1333</a> (CCC line).</p>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-banner" aria-hidden="true"><div><canvas id="dotGrid"></canvas></div></div>
+    </section>
+
+    <!-- ABOUT / STATS -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="head-row">
+          <div>
+            <span class="pill">Why Willow</span>
+            <h2>Where starting feels easier</h2>
+          </div>
+          <p class="side-text">Private, gentle support for anyone taking a first step, with you in control of what you share.</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>2 Modes</strong>
+            <span>Begin behind an alias or step forward by name</span>
+          </div>
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Free self-care tools and crisis helplines</span>
+          </div>
+          <div class="stat">
+            <strong>0</strong>
+            <span>Mental health data sold or shared for ads</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES TABS -->
+    <section class="section section-tint" id="services">
+      <div class="wrap">
+        <div class="center-head">
+          <h2>A gentle path forward</h2>
+          <p>Four ways in, from free self-care to a licensed counsellor. Move through them in any order, and share only what you want to.</p>
+        </div>
+
+        <div class="tabs">
+          <div class="tablist" role="tablist" aria-label="Ways to use Willow">
+            <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" data-tab="1"><span>Explore</span><i>01</i></button>
+            <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" data-tab="2" tabindex="-1"><span>Understand</span><i>02</i></button>
+            <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" data-tab="3" tabindex="-1"><span>Connect</span><i>03</i></button>
+            <button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" data-tab="4" tabindex="-1"><span>Thrive</span><i>04</i></button>
+          </div>
+
+          <div class="panels">
+            <div class="panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+              <div class="panel-art art-1" aria-hidden="true"></div>
+              <h3>Explore</h3>
+              <p>Take a short check-in and explore music, movies and art that match how you feel. No pressure and you choose how much to share.</p>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+              <div class="panel-art art-2" aria-hidden="true"></div>
+              <h3>Understand</h3>
+              <p>See what your answers suggest, learn about what you're experiencing in plain language and find out what kind of support might help.</p>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+              <div class="panel-art art-3" aria-hidden="true"></div>
+              <h3>Connect</h3>
+              <p>Talk to a trained counsellor when you're ready, and be matched with a licensed therapist if you need more. You decide what gets shared.</p>
+            </div>
+            <div class="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+              <div class="panel-art art-4" aria-hidden="true"></div>
+              <h3>Thrive</h3>
+              <p>Keep building small habits with coping tools, creative outlets and support that stays with you at your own pace.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="wrap process">
+        <div class="process-intro">
+          <span class="pill">How it works</span>
+          <h2>Get started without the pressure.</h2>
+          <p>Three steps take you from a short questionnaire to your first session. You stay in control at every stage.</p>
+          <a class="btn" href="#waitlist">Join waitlist</a>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h3>Answer a few questions</h3>
+              <p>A short questionnaire about what you’re going through. It isn’t a diagnosis. We use it to find the right counsellor for you.</p>
+            </div>
+            
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h3>Get matched</h3>
+              <p>We match you with a counsellor by language, what you’re dealing with, your budget and the times that suit you. You choose from the suggestions.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h3>Talk and keep going</h3>
+              <p>Pick video, voice or chat, anonymous or with your name. Check in with your counsellor at your own pace.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section section-tint" id="why">
+      <div class="wrap">
+        <div class="center-head">
+          <span class="pill">Why choose us</span>
+          <h2>We’re not your <em>typical</em> therapy app.</h2>
+          <p>We skip the high prices, the jargon and the pressure. We’re building support that works for people in Sri Lanka.</p>
+        </div>
+        <div class="compare">
+          <article class="card card-other">
+            <h3>Other options</h3>
+            <p>Many apps charge in dollars and work mainly in English. Helplines are free but don’t offer ongoing sessions. It’s hard to find something in between.</p>
+          </article>
+          <article class="card card-willow">
+            <h3>willow</h3>
+            <p>Pay in rupees, talk without fear, and choose how much you share. Start with free self-care tools, or book a counsellor when you’re ready.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM-->
+    <section class="section" id="team">
+      <div class="wrap">
+
+        <div class="center-head">
+          <span class="pill">Meet the team</span>
+          <h2>The people building Willow</h2>
+          <p>Five students, one project.</p>
+        </div>
+        <div class="team-grid">
+          <article class="member">
+            <span class="avatar" aria-hidden="true">SS</span>
+            <h3>Shevin Sheron</h3>
+            <dl>
+              <div><dt>UoW ID</dt><dd>w2212784</dd></div>
+              <div><dt>IIT ID</dt><dd>20250085</dd></div>
+            </dl>
+          </article>
+
+          <article class="member">
+            <span class="avatar" aria-hidden="true">QV</span>
+            <h3>Quinn Winston Vaithiyanathan</h3>
+            <dl>
+              <div><dt>UoW ID</dt><dd>w2212878</dd></div>
+              <div><dt>IIT ID</dt><dd>20250341</dd></div>
+            </dl>
+          </article>
+          <article class="member">
+            <span class="avatar" aria-hidden="true">SK</span>
+            <h3>Sadeesha Karunarathna</h3>
+            <dl>
+              <div><dt>UoW ID</dt><dd>w2212788</dd></div>
+              <div><dt>IIT ID</dt><dd>20250130</dd></div>
+            </dl>
+          </article>
+          <article class="member">
+            <span class="avatar" aria-hidden="true">PV</span>
+            <h3>Poorna Vaz</h3>
+            <dl>
+              <div><dt>UoW ID</dt><dd>w2182379</dd></div>
+              <div><dt>IIT ID</dt><dd>20250196</dd></div>
+            </dl>
+          </article>
+          <article class="member">
+            <span class="avatar" aria-hidden="true">UA</span>
+            <h3>Umair Ahmed</h3>
+            <dl>
+              <div><dt>UoW ID</dt><dd>w2212792</dd></div>
+              <div><dt>IIT ID</dt><dd>20250150</dd></div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-tint" id="faq">
+      <div class="wrap narrow">
+        <div class="center-head">
+          <span class="pill">FAQ</span>
+          <h2>Questions people ask.</h2>
+          <p>Everything you need to know before you start. Still have questions? Join the waitlist and we’ll get back to you.</p>
+        </div>
+
+        <div class="faq" id="faqList">
+          <div class="faq-item">
+            <h3><button aria-expanded="false" aria-controls="a1" id="q1">Is this therapy?<span class="plus" aria-hidden="true"></span></button></h3>
+            <div class="answer" id="a1" role="region" aria-labelledby="q1" hidden><p>It’s counselling for everyday difficulties like stress, anxiety, low mood, relationships and grief. It isn’t for emergencies or for anything that needs medication. If your situation needs that kind of care, your counsellor will tell you and help you reach it.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3><button aria-expanded="false" aria-controls="a2" id="q2">Can I really stay anonymous?<span class="plus" aria-hidden="true"></span></button></h3>
+            <div class="answer" id="a2" role="region" aria-labelledby="q2" hidden><p>Yes. You can use a nickname and leave out your name. The one limit is emergencies. We can’t send help to someone we can’t identify, so we show helplines and stay in the chat with you.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3><button aria-expanded="false" aria-controls="a3" id="q3">Which languages can I use?<span class="plus" aria-hidden="true"></span></button></h3>
+            <div class="answer" id="a3" role="region" aria-labelledby="q3" hidden><p>Sinhala, Tamil and English. You pick your language when you’re matched, and we only show counsellors who speak it.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3><button aria-expanded="false" aria-controls="a4" id="q4">What does it cost?<span class="plus" aria-hidden="true"></span></button></h3>
+            <div class="answer" id="a4" role="region" aria-labelledby="q4" hidden><p>You pay per session in rupees, with a local card or payment method. The price depends on the counsellor you choose. Self-care tools are free.</p></div>
+          </div>
+          <div class="faq-item">
+            <h3><button aria-expanded="false" aria-controls="a5" id="q5">Why do you ask questions at the start?<span class="plus" aria-hidden="true"></span></button></h3>
+            <div class="answer" id="a5" role="region" aria-labelledby="q5" hidden><p>The questions help us find a counsellor who suits you and spot anyone who needs more support than we can give. They aren’t a diagnosis. You can skip most of them. The safety questions are always asked, because they let us look after you.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAITLIST FORM -->
+    <section class="section" id="waitlist">
+      <div class="wrap cta">
+        <div class="cta-art" aria-hidden="true">
+          <h2>Take the first step, quietly</h2>
+        </div>
+
+        <form class="form" id="waitlistForm" novalidate>
+          <div class="field">
+            <label for="name">Name or nickname</label>
+            <input id="name" name="name" type="text" placeholder="Optional" autocomplete="nickname">
+          </div>
+
+          <div class="field">
+            <label for="contact">Email or phone number</label>
+            <input id="contact" name="contact" type="text" placeholder="So we can reach you" autocomplete="email" required aria-describedby="contactError">
+            <p class="error" id="contactError" role="alert" hidden></p>
+          </div>
+
+          <fieldset class="field">
+            <legend>What brings you here?</legend>
+
+            <div class="chips">
+              <label class="chip"><input type="radio" name="reason" value="Stress" checked><span>Stress</span></label>
+              <label class="chip"><input type="radio" name="reason" value="Low mood"><span>Low mood</span></label>
+              <label class="chip"><input type="radio" name="reason" value="Anxiety or worry"><span>Anxiety or worry</span></label>
+              <label class="chip"><input type="radio" name="reason" value="Relationships or family"><span>Relationships or family</span></label>
+              <label class="chip"><input type="radio" name="reason" value="Grief or loss"><span>Grief or loss</span></label>
+              <label class="chip"><input type="radio" name="reason" value="Work or study pressure"><span>Work or study pressure</span></label>
+              <label class="chip"><input type="radio" name="reason" value="Just need to talk"><span>Just need to talk</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>How would you like to talk?</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="format" value="Video" checked><span>Video</span></label>
+              <label class="chip"><input type="radio" name="format" value="Voice only"><span>Voice only</span></label>
+              <label class="chip"><input type="radio" name="format" value="Chat"><span>Chat</span></label>
+              <label class="chip"><input type="radio" name="format" value="Not sure yet"><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="notes">Anything you’d like us to know?</label>
+            <textarea id="notes" name="notes" rows="5" placeholder="You can leave this empty."></textarea>
+          </div>
+
+          <button class="btn btn-block" type="submit">Join waitlist</button>
+          <p class="small">Your details stay private. This form isn’t for emergencies. If you need help now, call <a href="tel:1926">1926</a>.</p>
+
+          <div class="success" id="formSuccess" role="status" hidden>
+            <h3>Thank you.</h3>
+            <p>You’re on the list. We’ll get in touch when Willow opens. If things feel hard right now, you can call <a href="tel:1926">1926</a> or <a href="tel:1333">1333</a> at any time.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <a class="logo" href="#top">willow</a>
+          <p>Quiet help for loud thoughts.</p>
+        </div>
+        <div class="foot-cols">
+          <div>
+            <h4>Navigate</h4>
+            <a href="#top">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#team">Team</a>
+          </div>
+          <div>
+            <h4>Resources</h4>
+            <a href="#services">Self-care</a>
+            <a href="#process">How it works</a>
+            <a href="#faq">FAQ</a>
+            <span>Helplines: 1926, 1333</span>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <a href="#waitlist">Join the waitlist</a>
+          </div>
+        </div>
+      </div>
+      <p class="copy">© 2026 Willow. A prototype built for a university project. Not a real counselling service yet.</p>
+    </div>
+  </footer>
+
+  <script src="js/splash.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
