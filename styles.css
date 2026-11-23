@@ -506,7 +506,7 @@ legend { padding: 0; }
   height: var(--dot, 16px);
   border-radius: 50%;
   background: var(--white);
-  transform: scale(var(--s, 0.45));
+  transform: scale(var(--s, 0.55));
   will-change: transform;
 }
 .hero__logos {
