@@ -111,12 +111,73 @@
     });
   });
 
-  /* ---------- Hero video: fade in once it is actually playing ---------- */
-  var heroVideo = document.getElementById("heroVideo");
-  if (heroVideo) {
-    var showVideo = function () { heroVideo.classList.add("is-playing"); };
-    if (!heroVideo.paused && heroVideo.readyState > 2) showVideo();
-    else heroVideo.addEventListener("playing", showVideo, { once: true });
+  /* ---------- Hero video: fade in once playing, then crossfade-loop ----------
+     Two copies of the same video are stacked. Shortly before the visible one
+     ends, the other restarts from 0 and fades in on top, so the jump from the
+     last frame back to the first is never seen. */
+  var vidA = document.getElementById("heroVideo");
+  var vidB = document.getElementById("heroVideo2");
+  if (vidA && vidB) {
+    var vids = [vidA, vidB], cur = 0, fading = false;
+    var XFADE = 1.2;  // seconds the two copies overlap
+    var LEAD = 0.4;   // extra head start so the incoming copy is already running
+    var SRC = vidA.currentSrc || vidA.src;
+
+    var reveal = function () { vidA.style.zIndex = 1; vidA.classList.add("is-on"); };
+    if (!vidA.paused && vidA.readyState > 2) reveal();
+    else vidA.addEventListener("playing", reveal, { once: true });
+
+    // Pull the whole file into memory once, so looping never waits on the
+    // network/disk. Copy B uses it straight away; copy A switches over the
+    // first time it is hidden. Falls back to the plain file if fetch fails.
+    var blobUrl = null;
+    var primeIdle = function (v) {
+      v.pause();
+      if (blobUrl && v.src !== blobUrl) { v.src = blobUrl; v.load(); }
+      else v.currentTime = 0;
+    };
+    var useFile = function () { if (!vidB.src) { vidB.src = SRC; vidB.load(); } };
+    if (window.fetch && window.URL && URL.createObjectURL) {
+      fetch(SRC).then(function (r) { if (!r.ok) throw 0; return r.blob(); })
+        .then(function (b) { blobUrl = URL.createObjectURL(b); if (!fading) primeIdle(vids[1 - cur]); })
+        .catch(useFile);
+    } else useFile();
+
+    // resolve once the video has actually painted a new frame
+    var onFrame = function (v, cb) {
+      if (v.requestVideoFrameCallback) v.requestVideoFrameCallback(function () { cb(); });
+      else v.addEventListener("playing", cb, { once: true });
+    };
+
+    var crossfade = function () {
+      fading = true;
+      var out = vids[cur], inc = vids[1 - cur];
+      if (!inc.src) useFile();
+      inc.style.zIndex = 2;
+      out.style.zIndex = 1;
+      var p = inc.play();
+      if (p && p.catch) p.catch(function () {});
+      // only start fading in once frames are flowing — any startup hiccup
+      // happens while the incoming copy is still invisible
+      onFrame(inc, function () {
+        inc.style.transition = "opacity " + XFADE + "s linear";
+        inc.classList.add("is-on");
+        setTimeout(function () {
+          out.classList.remove("is-on");
+          cur = 1 - cur;
+          fading = false;
+          // rewind the hidden copy well ahead of the next loop
+          setTimeout(function () { primeIdle(out); }, 300);
+        }, XFADE * 1000 + 60);
+      });
+    };
+
+    var watch = function () {
+      var v = vids[cur];
+      if (!fading && v.duration && (v.ended || v.currentTime >= v.duration - XFADE - LEAD)) crossfade();
+      requestAnimationFrame(watch);
+    };
+    requestAnimationFrame(watch);
   }
 
   /* ---------- Magnetic dot grid (hero) ---------- */
@@ -151,15 +212,15 @@
     var raf = 0, px = -9999, py = -9999;
     var update = function () {
       raf = 0;
-      for (var i = 0; i < dots.length; i++) {
-        var d = dots[i];
-        var b = d.parentNode.getBoundingClientRect();
-        var cx = b.left + b.width / 2, cy = b.top + b.height / 2;
-        var dist = Math.hypot(px - cx, py - cy);
-        var s = SCALE;
-        if (dist < RADIUS) s = SCALE * (1 + INTENSITY * (1 - dist / RADIUS));
-        d.style.setProperty("--s", s.toFixed(3));
+      // read every position first, then write — interleaving the two forced
+      // a full layout per dot and made the video underneath stutter
+      var n = dots.length, scales = new Array(n), i;
+      for (i = 0; i < n; i++) {
+        var b = dots[i].parentNode.getBoundingClientRect();
+        var dist = Math.hypot(px - (b.left + b.width / 2), py - (b.top + b.height / 2));
+        scales[i] = dist < RADIUS ? SCALE * (1 + INTENSITY * (1 - dist / RADIUS)) : SCALE;
       }
+      for (i = 0; i < n; i++) dots[i].style.setProperty("--s", scales[i].toFixed(3));
     };
     var area = grid.parentElement;
     area.addEventListener("pointermove", function (e) {
