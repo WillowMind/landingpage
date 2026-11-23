@@ -115,10 +115,10 @@
   var grid = document.getElementById("magneticGrid");
   if (grid) {
     var dots = [];
-    var SCALE = 0.6, INTENSITY = 1.2, RADIUS = 220;
+    var SCALE = 0.3, INTENSITY = 1.2, RADIUS = 200;
     var build = function () {
-      var cols = DESKTOP.matches ? 24 : (PHONE.matches ? 8 : 18);
-      var rows = DESKTOP.matches ? 8 : 10;
+      var cols = DESKTOP.matches ? 48 : (PHONE.matches ? 16 : 36);
+      var rows = DESKTOP.matches ? 16 : 20;
       grid.style.setProperty("--cols", cols);
       grid.style.setProperty("--rows", rows);
       grid.innerHTML = "";
