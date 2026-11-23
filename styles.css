@@ -489,7 +489,13 @@ legend { padding: 0; }
   overflow: clip;
   isolation: isolate;
 }
-.hero__video { z-index: 0; filter: saturate(175%); }
+/* still frame shows instantly; the video fades in over it once playing */
+.hero__video {
+  z-index: 0;
+  background: var(--sky-300) url("images/hero-flower.png") center / cover no-repeat;
+}
+.js .hero__video-media { opacity: 0; transition: opacity 1.6s var(--ease-framer); }
+.js .hero__video-media.is-playing { opacity: 1; }
 .magnetic-grid {
   position: relative;
   z-index: 1;

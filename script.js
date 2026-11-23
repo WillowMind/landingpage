@@ -111,6 +111,14 @@
     });
   });
 
+  /* ---------- Hero video: fade in once it is actually playing ---------- */
+  var heroVideo = document.getElementById("heroVideo");
+  if (heroVideo) {
+    var showVideo = function () { heroVideo.classList.add("is-playing"); };
+    if (!heroVideo.paused && heroVideo.readyState > 2) showVideo();
+    else heroVideo.addEventListener("playing", showVideo, { once: true });
+  }
+
   /* ---------- Magnetic dot grid (hero) ---------- */
   var grid = document.getElementById("magneticGrid");
   if (grid) {
