@@ -400,6 +400,13 @@
         </div>
 
         <form class="cta__form in-view-right" id="waitlistForm" novalidate>
+          <!-- settings read by FormSubmit (see script.js) -->
+          <input type="hidden" name="_subject" value="New Willow waitlist sign-up" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- spam trap: hidden from people, bots fill it in -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
           <div class="form__body">
             <div class="form__inputs">
               <label class="field">
@@ -408,7 +415,7 @@
               </label>
               <label class="field">
                 <span class="t-16m c-squirrel400">Email or phone number</span>
-                <input class="input" type="text" name="Email" placeholder="So we can reach you" required />
+                <input class="input" type="text" name="Email or phone" placeholder="So we can reach you" required />
               </label>
             </div>
 

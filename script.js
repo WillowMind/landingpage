@@ -238,10 +238,10 @@
   }
 
   /* ---------- Waitlist form ----------
-     Framer handled submissions on its servers. Set FORM_ENDPOINT to your own
-     endpoint (Formspree, Supabase function, etc.) to receive entries.
-     With no endpoint the button plays the same Loading → Success states. */
-  var FORM_ENDPOINT = "";
+     Submissions are emailed to the Willow inbox through FormSubmit
+     (formsubmit.co). The very first submission triggers an activation email
+     to that inbox; nothing is delivered until the link in it is clicked. */
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/willowmind.co@gmail.com";
   var form = document.getElementById("waitlistForm");
   var formBtn = document.getElementById("formBtn");
   if (form && formBtn) {
@@ -261,8 +261,13 @@
         setTimeout(function () { setState("idle"); }, 4000);
       };
       if (!FORM_ENDPOINT) { setTimeout(function () { done(true); }, 1200); return; }
-      fetch(FORM_ENDPOINT, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
-        .then(function (r) { done(r.ok); })
+      var data = new FormData(form);
+      // let "Reply" in Gmail go straight to the person, when they gave an email
+      var contact = String(data.get("Email or phone") || "").trim();
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)) data.set("_replyto", contact);
+      fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } })
+        .then(function (r) { return r.ok ? r.json() : { success: false }; })
+        .then(function (res) { done(res && String(res.success) === "true"); })
         .catch(function () { done(false); });
     });
   }
