@@ -876,6 +876,16 @@ legend { padding: 0; }
   letter-spacing: -0.05em;
   color: var(--ink-500);
 }
+.member__link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.3s var(--ease-framer), text-decoration-color 0.3s var(--ease-framer);
+}
+.member__link:hover { color: var(--blue-400); text-decoration-color: currentColor; }
+.member__link:focus-visible { outline: 2px solid var(--blue-400); outline-offset: 4px; border-radius: 4px; }
 .member__ids { display: flex; flex-direction: column; gap: 8px; margin: auto 0 0; color: var(--ink-500); }
 .member__ids div { display: flex; justify-content: space-between; gap: 16px; padding-top: 8px; border-top: 1px solid rgba(0, 0, 0, 0.12); }
 .member__ids dt { color: var(--ink-300); }
