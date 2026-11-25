@@ -184,7 +184,7 @@
   var grid = document.getElementById("magneticGrid");
   if (grid) {
     var dots = [];
-    var SCALE = 0.55, INTENSITY = 0.8, RADIUS = 200;
+    var SCALE = 0.55, INTENSITY = 1.3, RADIUS = 200;
     var build = function () {
       var cols = DESKTOP.matches ? 48 : (PHONE.matches ? 16 : 36);
       var rows = DESKTOP.matches ? 16 : 20;
